@@ -1,36 +1,94 @@
-<html>
-
-<head>
+<%- include('includes/head.ejs')%>
     <link rel="stylesheet" href="../css/year.css">
+    </head>
+    <%- include('includes/nav.ejs')%>
+        <div class="year-container">
+            <div class="header">
+                <div class="year">
+                    <div class="arrow-up" id="downYear"></div>
+                    <div id="yearNo">
+                        <%=year%>
+                    </div>
+                    <div class="arrow-down" id="upYear"></div>
+                </div>
+                <button id="okButton" class="pushy__btn pushy__btn--sm pushy__btn--red">OK</button>
 
-    <title>year</title>
-</head>
-
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="year">
-                <div class="arrow-up" id="downYear"></div>
-                <div id="yearNo"><%=year%></div>
-                <div class="arrow-down" id="upYear"></div>
             </div>
-            <button id="okButton">OK</button>
-        </div>
-    <div class="container-data">
-        <% for (let i=0; i < moodColors.length; i++) { %>
-            <div class="month">
-                <% for (let j=0; j < moodColors[i].length; j++) { %>
-                    <div class="date" style="background-color:<%=moodColors[i][j]%>">
-                        <%= j%>
+            <div class="container-data">
+                <% for (let i=0; i < moodColors.length; i++) { %>
+                    <div class="month">
+                        <div>
+
+                            <% for (let j=0; j < moodColors[i].length; j++) { %>
+
+                                <div class="date" style="background-color:<%=moodColors[i][j]%>">
+
+                                </div>
+                                <% } %>
+                        </div>
+
                     </div>
                     <% } %>
+
+                        <div class="year-img">
+                            <div class="recap">
+                                <h2>Recap</h2>
+                                <h1>
+                                    <%=year%>
+                                </h1>
+
+                            </div>
+                            <div>
+                                <div class="mood">
+                                    <label for="">
+                                        <%= moodCounts['5'] %>
+                                    </label>
+                                    <img src="../assets/Very_happy.png" alt="">
+                                    <label for="">Very Happy</label>
+                                </div>
+                                <div class="mood">
+                                    <label for="">
+                                        <%= moodCounts['4'] %>
+                                    </label>
+                                    <img src="../assets/happy.png" alt="">
+                                    <label for="">Happy</label>
+                                </div>
+                                <div class="mood">
+                                    <label for="">
+                                        <%= moodCounts['3'] %>
+                                    </label>
+                                    <img src="../assets/nomood.png" alt="">
+                                    <label for="">Indifferent</label>
+                                </div>
+                                <div class="mood">
+                                    <label for="">
+                                        <%= moodCounts['2'] %>
+                                    </label>
+                                    <img src="../assets/angry.png" alt="">
+                                    <label for="">Angry</label </div>
+                                </div>
+                                <div class="mood">
+                                    <label for="">
+                                        <%= moodCounts['1'] %>
+                                    </label>
+                                    <img src="../assets/sad.png" alt="">
+                                    <label for="">Sad</label>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
             </div>
-            <% } %>
-    </div>
-</div>
 
-    <script type="module" src="../script/year.js"></script>
 
-</body>
 
-</html>
+
+
+            <%- include('includes/footer.ejs')%>
+                <script type="module" src="../script/year.js"></script>
+
+                </body>
+
+                </html>
