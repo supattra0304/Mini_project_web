@@ -1,0 +1,26 @@
+/* กำหนดสไตล์ของคลาส big ให้กล่องห่อ div 4 กล่อง */
+.big {
+    display: flex; /* เปิดใช้งาน Flexbox */
+ /* จัดเรียงแนวตั้ง */
+    justify-content: center; /* จัดให้กล่องตรงกลางแนวตั้ง */
+    align-items: center; /* จัดให้กล่องตรงกลางแนวนอน */
+    flex-direction: row;
+  }
+  
+  /* สไตล์ของกล่องภายใน big */
+  .big div {
+    width: 100px; /* กำหนดความกว้างของแต่ละกล่อง */
+    height: 100px; /* กำหนดความสูงของแต่ละกล่อง */
+    background-color: #007bff; /* สีพื้นหลังเริ่มต้น */
+    transition: background-color 0.3s; /* เพิ่มการเปลี่ยนสีอย่างนุ่มนวล */
+  }
+  
+  /* เมื่อโฮเวอร์กับกล่อง */
+  .big div:hover {
+    background-color: #ff5733; /* เปลี่ยนสีเมื่อโฮเวอร์ */}
+
+.ff {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -141,7 +141,7 @@
     height: 390px;
     background-color: #fff;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2), -3px -3px 4px rgba(189, 175, 175, 0.2);
-    animation: expandCard 1.0s ease forwards; /* ใช้ animation */
+    animation: expandCard 0.6s ease forwards; /* ใช้ animation */
     transform-origin: center top; 
 }
 
