@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"/>
+    <title>navbar</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo">
+        <!-- <img  class="ilogo" src="../access/logo-p.svg" alt=""> -->
+        <img  class="ilogo" src="../assets/MemoFeel.gif" alt="">
+      </a>
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li class="nav-link">
+            <a href="#" data-text="Home">Home</a>
+          </li>
+          <li class="nav-link mood" >
+            <a href="#" data-text="Mood"
+              >Mood
+              <span class="material-icons dropdown-icon">
+                arrow_drop_down
+              </span>
+            </a>
+            <ul class="drop-down">
+              <li> <a href="#">Day</a> </li>
+              <li> <a href="#">Month</a> </li>
+              <li> <a href="#">Year</a> </li>
+            </ul>
+          </li>
+          <li class="nav-link">
+            <a href="#" data-text="About">About</a>
+          </li>
+          <li class="nav-link">
+            <a href="#" data-text="Team">Team</a>
+          </li>
+        </ul>
+      </nav> 
+    </header>
+    
+    
+   
+
+    <main>
+
+    </main>
+
+
+
+    <footer>
+        <div class="waves">
+          <div class="wave" id="wave1"></div>
+          <div class="wave" id="wave2"></div>
+          <div class="wave" id="wave3"></div>
+          <div class="wave" id="wave4"></div>
+      </div>
+      <ul class="social_icon">
+          <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+          <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+      </ul>
+      <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Mood</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Team</a></li>
+      </ul>
+      <p>©<%= new Date().getFullYear() %> Web Technology and Web | All Right Reserved</p>
+
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+
+ 
