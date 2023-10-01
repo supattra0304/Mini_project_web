@@ -3,7 +3,7 @@ const dataSend = [];
 let daysInCurrentMonth = 0;
 let year = null;
 let moodColors = null;
-const moodCounts = {
+let moodCounts = {
   1: 0,
   2: 0,
   3: 0,
@@ -27,15 +27,14 @@ const allMonth = [
 ];
 
 const colorsMood = [
-  { num: 1, color: "purple" },
-  { num: 2, color: "red" },
-  { num: 3, color: "blue" },
-  { num: 4, color: "yellow" },
-  { num: 5, color: "green" },
+  { num: 1, color: "#9370DB" },
+  { num: 2, color: "#F08080" },
+  { num: 3, color: "#87CEFA" },
+  { num: 4, color: "#F9F871" },
+  { num: 5, color: "#33CC66" },
 ];
 
 const getYear = async (req, res) => {
-    console.log(year)
   if (year === null) {
     year = 2023;
     const startDate = new Date(year, 0, 1);
@@ -89,16 +88,14 @@ const getYear = async (req, res) => {
 
     moodColors = moodColorsByYearMonth;
   }
-  console.log(moodCounts);
-  res.render("year", { moodColors, year });
+
+  res.render("year", { title: "Year", moodColors, year, moodCounts });
 };
 
 const postYear = async (req, res) => {
-  const data = req.body; //
+  const data = req.body;
   console.log(data);
   if (year === data.year) return;
-  else year = data.year;
-  moodColors = [];
 
   year = parseInt(data.year);
 
@@ -117,6 +114,14 @@ const postYear = async (req, res) => {
     const dateB = new Date(b.date);
     return dateA - dateB;
   });
+
+  moodCounts = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+  };
 
   allData.forEach((item) => {
     const { mood } = item;
@@ -152,7 +157,7 @@ const postYear = async (req, res) => {
   });
 
   moodColors = moodColorsByYearMonth;
-  res.redirect("/year")
+  res.redirect("/year");
 };
 
 module.exports = { getYear, postYear };

@@ -1,44 +1,178 @@
-.container{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;500;600&family=Prompt:ital,wght@0,100;0,300;0,600;0,800;1,100;1,300&family=Titan+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Patrick+Hand&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@200;400&family=Patrick+Hand&display=swap');
+
+.year-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #f00;
-    background: linear-gradient(to top, transparent 50%, rgba(255, 255, 255, 0.5) 50%);
-  }
-  
-  .arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #f00;
-    background: linear-gradient(to top, transparent 50%, rgba(255, 255, 255, 0.5) 50%);
-  }
+.year-container .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-family: "Titan One", cursive !important;
+  font-size: 23px;
+}
 
-  
-.container-data{
- height: 100%;
-    display: flex;
-    flex-direction:row;
-    border: 1px solid black;
+.year-container .year {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Titan One", cursive !important;
+  width: 100px;
+  margin: 10px;
+}
+
+.year-container .arrow-up {
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f00;
+  background: linear-gradient(
+    to top,
+    transparent 50%,
+    rgba(255, 255, 255, 0.5) 50%
+  );
+}
+
+.year-container .arrow-down {
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #f00;
+  background: linear-gradient(to top, transparent 50%, rgba(255, 255, 255, 0.5) 50%);
+}
+
+.year-container .container-data {
+  background-color: antiquewhite;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2),
+    -3px -3px 4px rgba(189, 175, 175, 0.2);
+  border-radius: 30px;
+  padding: 50px 0px 50px 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  /* border: 1px solid black; */
+}
+.year-container .month {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+}
+.year-container .date {
+  width: 20px;
+  height: 20px;
+  border: 0.1px solid #84765e;
+}
+
+.year-container .year-img {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+
+
+.year-container .year-img h2 {
+  width: 100%;
+
+margin: 0;
+  text-align: center;
+  font-family: "Courgette", cursive;
+  font-size: 80px;
+  font-weight: 200;
+}
+
+.year-container .year-img h1 {
+  width: 100%;
+  text-align: end;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-size: 55px;
+  font-weight: 400;
+  padding-right: 10px;
+  margin: 0px;
+}
+
+.year-container .mood {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin: 5px 0;
+  height: auto;
+  /* padding: 5px 0 5px 30px; */
+  font-family: 'Patrick Hand', cursive;
 
 }
-.month{
-    display: flex;
-    flex-direction:column;
-    border: 1px solid black;
+
+.year-container .year-img label:first-child {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px; /* ปรับค่าตามที่คุณต้องการ */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* ปรับค่าตามที่คุณต้องการ */
 }
-.date{
-    width: 20px;
-    height: 20px;
+
+
+.year-container .year-img img {
+  width: 30px;
+}
+
+.year-container .pushy__btn {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  display: inline-block;
+  border: none;
+  border-radius: 1.5em;
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+    inset 0 -0.25em 0 rgba(0, 0, 0, 0.25), 0 0.25em 0.25em rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+    inset 0 -0.25em 0 rgba(0, 0, 0, 0.25), 0 0.25em 0.25em rgba(0, 0, 0, 0.05);
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.5;
+  padding: 0.25em 0.75em 0.375em;
+  position: relative;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.year-container .pushy__btn:active {
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+    inset 0 2px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0.25em 0.5em rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+    inset 0 2px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0.25em 0.5em rgba(0, 0, 0, 0.05);
+  margin-top: 0.25em;
+  padding-bottom: 0.5em;
+}
+.pushy__btn:active,
+.pushy__btn:focus {
+  outline: none;
+}
+.pushy__btn--red {
+  background-color: #ee4444;
+}
+.pushy__btn--sm {
+  font-size: 0.75em;
 }
