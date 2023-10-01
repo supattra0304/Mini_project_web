@@ -3,6 +3,8 @@ let dataSend = [];
 let daysInCurrentMonth = 0;
 let month = null;
 let year = null;
+let redirect = true;
+let fetchNew = true;
 let MonthName = "";
 
 const allMonth = [
@@ -37,16 +39,24 @@ const imgSrc = [
 ];
 
 const getMonth = async (req, res) => {
+  console.log(year,month)
+  console.log(typeof(year),typeof(month))
+
+
   if (month === null) {
     const currentDate = new Date();
     const day = currentDate.getDate();
     month = currentDate.getMonth() + 1;
     year = currentDate.getFullYear();
-
     daysInCurrentMonth = new Date(year, month, 0).getDate();
-    const startDate = new Date(year, month - 1, 1);
-    const endDate = new Date(year, month, 0);
+  }
+  const startDate = new Date(year, month - 1, 1);
+  const endDate = new Date(year, month, 0);
 
+  console.log(startDate,endDate)
+
+  if (redirect === true || fetchNew === true) {
+    console.log("Hello guy");
     const allData = await Daily.find({
       date: {
         $gte: startDate,
@@ -91,72 +101,50 @@ const getMonth = async (req, res) => {
       }
     }
   }
-
+  fetchNew = false;
+  redirect = false;
   MonthName = allMonth[month - 1];
-  res.render("month", { daysInCurrentMonth, dataSend, MonthName, year });
+  res.render("month", {title: "Month", daysInCurrentMonth, dataSend, MonthName, year });
 };
 
 const postMonth = async (req, res) => {
   const data = req.body; //
   if (month === data.month && year === data.year) return;
   else month = data.month;
+  console.log("do you here me");
   year = data.year;
   dataSend = [];
   year = parseInt(data.year);
   month = parseInt(data.month);
   daysInCurrentMonth = new Date(year, month, 0).getDate();
 
-  const startDate = new Date(year, month - 1, 1);
-  const endDate = new Date(year, month, 0);
-
-  const allData = await Daily.find({
-    date: {
-      $gte: startDate,
-      $lte: endDate,
-    },
-  });
-
-  for (let i = 1; i <= daysInCurrentMonth; i++) {
-    let dataFound = false;
-    allData.forEach((item) => {
-      const dateObject = new Date(item.date);
-      const getdate = dateObject.getDate();
-
-      if (i === getdate) {
-        const imgObj = imgSrc.find((obj) => obj.num === item.mood);
-        const colorObj = colorsMood.find((obj) => obj.num === item.mood);
-
-        dataSend.push({
-          date: getdate,
-          img: imgObj.src,
-          color: colorObj.color,
-          note: item.note,
-        });
-        dataFound = true;
-      }
-    });
-    if (!dataFound) {
-      dataSend.push({
-        date: i,
-        img: null,
-        color: null,
-        note: `Do you forget write ? Let'go to Create one!!!`,
-      });
-    }
-  }
+  redirect = true;
 
   res.redirect("/month");
 };
 
 const deleteMonth = async (req, res) => {
   const data = req.body;
-  console.log(data);
+
+
   if (data.month === undefined || data.year === undefined || data.day === 0)
     return;
+  const days = data.day
+  const months = data.month
+  const years =data.year
+  year = data.year;
+  dataSend = [];
+  year = parseInt(years);
+  month = parseInt(months);
+  daysInCurrentMonth = new Date(year, month, 0).getDate();
+  const dateToDelete = new Date(years, months - 1, days);
 
-    
+  const deletes = await Daily.deleteOne({ date: dateToDelete });
 
-  res.redirect("/month");
+  fetchNew = true;
+  redirect = true;
+
+  res.status(200).json({ message: "ok" });
 };
 
 const getDataSend = async (req, res) => {

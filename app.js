@@ -23,9 +23,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => {
-  res.render('includes/header');
-});
+
 
 
 fs.readdirSync('./routes')

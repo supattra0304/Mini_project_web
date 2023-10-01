@@ -1,67 +1,59 @@
-<html>
-
-<head>
+<%- include('includes/head.ejs')%>
     <link rel="stylesheet" href="../css/month.css">
-
-    <title>Month</title>
-</head>
-
-<body>
-
-    <div class="container-blur hide">
-        <div class="card-day">
-            <div id="note">
-
-            </div>
-            <div class="footer">
-                <p>By beautiful girl</p>
-                <p id="date">DD/MM/YYYY</p>
-            </div>
-            <div>
-                <img src="../assets/bin.png" alt="" id="bin">
+    </head>
+    <%- include('includes/nav.ejs')%>
+        <div class="container-blur hide">
+            <div class="card-day">
+                <div id="note">
+                </div>
+                <div class="footer">
+                    <p>By beautiful girl</p>
+                    <p id="date">DD/MM/YYYY</p>
+                </div>
+                <div>
+                    <img src="../assets/bin.png" alt="" id="bin">
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="container">
-        <div class="header">
-            <div class="month">
-                <div class="arrow-up" id="downMonth"></div>
-                <div id="Monthname">
-                    <%=MonthName%>
-                </div>
-                <div class="arrow-down" id="upMonth"></div>
-            </div>
-            <div class="year">
-                <div class="arrow-up" id="downYear"></div>
-                <div id="yearNo">
-                    <%=year%>
-                </div>
-                <div class="arrow-down" id="upYear"></div>
-            </div>
-
-            <button id="okButton" class="pushy__btn pushy__btn--sm pushy__btn--red">OK</button>
-        </div>
-
-        <div class="card-container">
-            <% for (let i=0; i < daysInCurrentMonth; i++) { %>
-                <div class="card">
-                    <div class="pin"></div>
-                    <div class="top" style="background-color:<%=dataSend[i].color%>">
-                        <%if(dataSend[i].img !=null) {%>
-                            <img src=<%=dataSend[i].img%> alt="">
-                            <%}%>
+        <div class="container">
+            <div class="header">
+                <div class="month">
+                    <div class="arrow-up" id="downMonth"></div>
+                    <div id="Monthname">
+                        <%=MonthName%>
                     </div>
-                    <div class="date">
-                        <%= i + 1 %>
-                    </div>
+                    <div class="arrow-down" id="upMonth"></div>
                 </div>
-                <% } %>
+                <div class="year">
+                    <div class="arrow-up" id="downYear"></div>
+                    <div id="yearNo">
+                        <%=year%>
+                    </div>
+                    <div class="arrow-down" id="upYear"></div>
+                </div>
+
+                <button id="okButton" class="pushy__btn pushy__btn--sm pushy__btn--red">OK</button>
+            </div>
+
+            <div class="card-container">
+                <% for (let i=0; i < daysInCurrentMonth; i++) { %>
+                    <div class="card">
+                        <div class="pin"></div>
+                        <div class="top" style="background-color:<%=dataSend[i].color%>">
+                            <%if(dataSend[i].img !=null) {%>
+                                <img src=<%=dataSend[i].img%> alt="">
+                                <%}%>
+                        </div>
+                        <div class="date">
+                            <%= i + 1 %>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
         </div>
-    </div>
+        <%- include('includes/footer.ejs')%>
+            <script type="module" src="../script/month.js"></script>
 
-    <script type="module" src="../script/month.js"></script>
+            </body>
 
-</body>
-
-</html>
+            </html>

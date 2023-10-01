@@ -89,45 +89,44 @@ allCards.forEach((card, index) => {
 });
 
 const deleteBtn = document.querySelector("#bin");
-deleteBtn.addEventListener("click", function () {
-  if (clickedIndex === null) {
-    // ไม่มีการ์ดที่ถูกคลิก ไม่ต้องทำอะไร
-    return;
-  }
+allCards.forEach((card, index) => {
+  card.addEventListener("click", function () {
+    containerBlur.classList.remove("hide");
+    let clickedIndex = index; // ใช้ let แทน index
+    note.textContent = dataSend[clickedIndex].note;
 
-  if (dataSend[clickedIndex].note === `Do you forget to write? Let's go to create one!!!`) {
-    clickedIndex = null;
-    return;
-  }
-
-  const url = "/month";
-  const data = {
-    day: clickedIndex,
-    month: month,
-    year: year,
-  };
-
-  fetch(url, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => {
-      if (response.ok) {
-        location.href = location.href;
-      } else {
-        console.error("เกิดข้อผิดพลาดในการร้องขอ:", response.status);
-      }
-    })
-    .catch((error) => {
-      console.error("เกิดข้อผิดพลาดในการร้องขอ:", error);
+    const deleteBtn = document.querySelector("#bin");
+    deleteBtn.addEventListener("click", function () {
+      if(dataSend[clickedIndex].note === `Do you forget write ? Let'go to Create one!!!`) return
+      const url = "/month_drop";
+      const data = {
+        day: clickedIndex, // ใช้ค่า clickedIndex แทน index
+        month: month,
+        year: year,
+      };
+    
+      fetch(url, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => {
+          console.log(response)
+          if (response.status===200) {
+            window.location.href = "/month"; 
+          } else {
+            console.error("เกิดข้อผิดพลาดในการร้องขอ:", response.status);
+          }
+        })
+        .catch((error) => {
+          console.error("เกิดข้อผิดพลาดในการร้องขอ:", error);
+        });
+      clickedIndex = null; // เคลียร์ค่า clickedIndex เมื่อทำงานเสร็จสิ้น
     });
-
-  clickedIndex = null; // เคลียร์ค่า clickedIndex เมื่อทำงานเสร็จสิ้น
+  });
 });
-
 
 containerBlur.addEventListener("click", function () {
   containerBlur.classList.add("hide");
