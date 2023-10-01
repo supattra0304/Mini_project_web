@@ -2,8 +2,11 @@
   <link rel="stylesheet" href="../css/add.css">
 </head>
 <%- include('includes/nav.ejs')%>
+<div class="add-container">
     <div class="container">
-        <h1>Enter Date and Notes</h1>
+        <div class="header">
+            <h1>Enter Date and Notes</h1>
+        </div>
         <form id="dateForm">
             <label for="date">Date:</label>
             <input type="date" id="date" name="date"><br><br>
@@ -18,13 +21,16 @@
                 <option value="🫤">🫤</option>
             </select><br><br>
             
-            <input type="button" value="ok" onclick="sendData()">
+            <div class="button-container">
+                <input type="button" value="Add" onclick="sendData()">
+            </div>
         </form>
 
         <div id="result">
             <p id="dateDisplay"></p>
         </div>
     </div>
+</div>
 
     <%- include('includes/footer.ejs')%>
 
