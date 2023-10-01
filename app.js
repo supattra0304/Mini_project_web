@@ -25,7 +25,6 @@ app.use((req, res, next) => {
 
 
 
-
 fs.readdirSync('./routes')
   .forEach((r) => {
     if (r.endsWith('.js')) {

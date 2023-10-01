@@ -10,8 +10,13 @@ const {
 const { getYear, postYear } = require("../controllers/year");
 
 router.get("/", (req, res) => {
-  res.render("includes/header");
+  res.render("includes/header",{title: "Home"});
 });
+
+router.get("/about", (req, res) => {
+  res.render("about",{title: "About"});
+});
+
 
 router.get("/month", getMonth);
 router.post("/month", postMonth);
