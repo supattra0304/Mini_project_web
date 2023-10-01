@@ -23,12 +23,13 @@ const allMonth = [
 ];
 
 const colorsMood = [
-  { num: 1, color: "purple" },
-  { num: 2, color: "red" },
-  { num: 3, color: "blue" },
-  { num: 4, color: "yellow" },
-  { num: 5, color: "green" },
+  { num: 1, color: "#9370DB" },
+  { num: 2, color: "#F08080" },
+  { num: 3, color: "#87CEFA" },
+  { num: 4, color: "#F9F871" },
+  { num: 5, color: "#33CC66" },
 ];
+
 
 const imgSrc = [
   { num: 5, src: "../assets/Very_happy.png" },
@@ -39,10 +40,6 @@ const imgSrc = [
 ];
 
 const getMonth = async (req, res) => {
-  console.log(year,month)
-  console.log(typeof(year),typeof(month))
-
-
   if (month === null) {
     const currentDate = new Date();
     const day = currentDate.getDate();
@@ -53,10 +50,8 @@ const getMonth = async (req, res) => {
   const startDate = new Date(year, month - 1, 1);
   const endDate = new Date(year, month, 0);
 
-  console.log(startDate,endDate)
 
   if (redirect === true || fetchNew === true) {
-    console.log("Hello guy");
     const allData = await Daily.find({
       date: {
         $gte: startDate,
@@ -111,7 +106,6 @@ const postMonth = async (req, res) => {
   const data = req.body; //
   if (month === data.month && year === data.year) return;
   else month = data.month;
-  console.log("do you here me");
   year = data.year;
   dataSend = [];
   year = parseInt(data.year);
@@ -137,7 +131,7 @@ const deleteMonth = async (req, res) => {
   year = parseInt(years);
   month = parseInt(months);
   daysInCurrentMonth = new Date(year, month, 0).getDate();
-  const dateToDelete = new Date(years, months - 1, days);
+  const dateToDelete = new Date(years, months - 1, days+1);
 
   const deletes = await Daily.deleteOne({ date: dateToDelete });
 
