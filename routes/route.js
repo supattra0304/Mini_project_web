@@ -13,6 +13,11 @@ router.get("/", (req, res) => {
   res.render("includes/header");
 });
 
+
+router.get("/add", (req, res) => {
+  res.render("add", {title: "Add your mood"});
+});
+
 router.get("/month", getMonth);
 router.post("/month", postMonth);
 router.delete("/month_drop", deleteMonth);

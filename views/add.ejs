@@ -1,0 +1,47 @@
+<%- include('includes/head.ejs')%>
+  <link rel="stylesheet" href="../css/add.css">
+</head>
+<%- include('includes/nav.ejs')%>
+    <div class="container">
+        <h1>Enter Date and Notes</h1>
+        <form id="dateForm">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date"><br><br>
+            
+            <label for="Notes">Notes:</label><br>
+            <input type="text">
+            <select id="Notes" name="Notes">
+                <option value="😆">😆</option>
+                <option value="😀">😀</option>
+                <option value="🙂">🙂</option>
+                <option value="😐">😐</option>
+                <option value="🫤">🫤</option>
+            </select><br><br>
+            
+            <input type="button" value="ok" onclick="sendData()">
+        </form>
+
+        <div id="result">
+            <p id="dateDisplay"></p>
+        </div>
+    </div>
+
+    <%- include('includes/footer.ejs')%>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/13.1.0/twemoji.min.js"></script>
+    <script>
+        function sendData() {
+            const dateInput = document.getElementById("date").value;
+            const emojiSelect = document.getElementById("emoji");
+            const selectedEmoji = emojiSelect.value;
+
+            document.getElementById("date").value = "";
+            emojiSelect.selectedIndex = 0;
+
+            
+            const resultDiv = document.getElementById("result");
+            resultDiv.style.display = "none";
+        }
+    </script>
+</body>
+</html>
