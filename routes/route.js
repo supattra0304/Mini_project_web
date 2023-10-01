@@ -14,9 +14,13 @@ router.get("/", (req, res) => {
 });
 
 router.get("/about", (req, res) => {
-  res.render("about",{title: "About"});
+  res.render("about", {title: "About"});
 });
 
+
+router.get("/add", (req, res) => {
+  res.render("add", {title: "Add your mood"});
+});
 
 router.get("/month", getMonth);
 router.post("/month", postMonth);
