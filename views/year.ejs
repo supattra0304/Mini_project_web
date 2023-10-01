@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/year.css">
+
+    <title>year</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="year">
+                <div class="arrow-up" id="downYear"></div>
+                <div id="yearNo"><%=year%></div>
+                <div class="arrow-down" id="upYear"></div>
+            </div>
+            <button id="okButton">OK</button>
+        </div>
+    <div class="container-data">
+        <% for (let i=0; i < moodColors.length; i++) { %>
+            <div class="month">
+                <% for (let j=0; j < moodColors[i].length; j++) { %>
+                    <div class="date" style="background-color:<%=moodColors[i][j]%>">
+                        <%= j%>
+                    </div>
+                    <% } %>
+            </div>
+            <% } %>
+    </div>
+</div>
+
+    <script type="module" src="../script/year.js"></script>
+
+</body>
+
+</html>
