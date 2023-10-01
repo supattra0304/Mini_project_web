@@ -13,13 +13,16 @@ router.get("/", (req, res) => {
   res.render("includes/header",{title: "Home"});
 });
 
+router.get("/add", (req, res) => {
+  res.render("add", {title: "Add your mood"});
+});
+
 router.get("/about", (req, res) => {
   res.render("about", {title: "About"});
 });
 
-
-router.get("/add", (req, res) => {
-  res.render("add", {title: "Add your mood"});
+router.get("/team", (req, res) => {
+  res.render("team", {title: "Team"});
 });
 
 router.get("/month", getMonth);
