@@ -7,7 +7,11 @@ const {
   deleteMonth,
   getDataSend,
 } = require("../controllers/month");
+
 const { getYear, postYear } = require("../controllers/year");
+
+const {addDaily} = require("../controllers/add")
+
 
 router.get("/", (req, res) => {
   res.render("includes/header",{title: "Home"});
@@ -32,5 +36,9 @@ router.get("/month_data", getDataSend);
 
 router.get("/year", getYear);
 router.post("/year", postYear);
+
+router.post("/add",addDaily)
+
+
 
 module.exports = router;

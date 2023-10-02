@@ -38,8 +38,6 @@ const downYear = document.querySelector("#downYear");
 const upYear = document.querySelector("#upYear");
 
 const monthtxt = Monthname.textContent.trim();
-console.log(monthtxt);
-console.log(monthtxt.length);
 
 let month = allMonth.indexOf(monthtxt) + 1;
 let year = parseInt(yearNo.textContent);
@@ -51,7 +49,6 @@ upMonth.addEventListener("click", function () {
   }
 });
 
-console.log(month);
 downMonth.addEventListener("click", function () {
   if (month > 1) {
     month = month - 1;
@@ -118,7 +115,7 @@ allCards.forEach((card, index) => {
         body: JSON.stringify(data),
       })
         .then((response) => {
-          console.log(response);
+        
           if (response.status === 200) {
             window.location.href = "/month";
           } else {
