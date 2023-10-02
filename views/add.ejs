@@ -1,35 +1,36 @@
 <%- include('includes/head.ejs')%>
     <link rel="stylesheet" href="../css/add.css">
+
     </head>
     <%- include('includes/nav.ejs')%>
         <div class="add-container">
             <div class="container">
                 <div class="header">
-                    <h1>Enter Date and Notes</h1>
+                    <h1><span id="cb">Enter </span> <span id="cd">Date </span> <span id="ce">and </span> <span id="ca">Notes</span></h1>
                 </div>
                 <form id="dateForm">
                     <div class="date-box">
-                        <label for="date">Date:</label>
+                        <label for="date"><span id="aa">Date:</span></label>
                         <input type="date" id="date" name="date"><br><br>
                     </div>
 
 
-                    <div >
-                        <label>Notes</label>
-                          <div class="description">
-                      <textarea name="description" style="width:25%;overflow:auto;" placeholder="Description"></textarea>
-                      <select id="Notes" name="Notes">
-                          <option value="😆">😆</option>
-                          <option value="😀">😀</option>
-                          <option value="🙂">🙂</option>
-                          <option value="😐">😐</option>
-                          <option value="🫤">🫤</option>
-                      </select><br><br>
-                          </div>                                                            
-                      </div>
-                                         
+                    <div class = input-item>
+                        <label for="Notes"><span id="bb">Notes:</span></label>
+                        <div class="description">
+                            <textarea name="description" placeholder="Description"></textarea>
+                            <select id="emoji" name="Notes">
+                                <option value="😆">😆</option>
+                                <option value="😀">😀</option>
+                                <option value="🙂">🙂</option>
+                                <option value="😐">😐</option>
+                                <option value="🫤">🫤</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="button-container">
-                        <input type="button" value="Add" onclick="sendData()">
+                        <input class="ab" type="button" value="Add" onclick="sendData()">
                     </div>
                 </form>
 
@@ -48,13 +49,19 @@
                     const emojiSelect = document.getElementById("emoji");
                     const selectedEmoji = emojiSelect.value;
 
+                    // ตรวจสอบค่าที่ได้
+                    console.log("Date: " + dateInput);
+                    console.log("Selected Emoji: " + selectedEmoji);
+
+                    // เคลียร์ค่า
                     document.getElementById("date").value = "";
                     emojiSelect.selectedIndex = 0;
 
-
                     const resultDiv = document.getElementById("result");
-                    resultDiv.style.display = "none";
+                    resultDiv.style.display = "block"; // แสดงผลลัพธ์
                 }
+
+
             </script>
             </body>
 

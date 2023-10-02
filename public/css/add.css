@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,800&family=Roboto:ital,wght@0,100;0,500;0,700;0,900;1,100&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .add-container{
     width: 100%;
@@ -7,6 +7,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 2rem;
+    font-family: 'Kanit', sans-serif;
     }
     
     .add-container .container {
@@ -15,13 +17,16 @@
         /* justify-content: center; */
         align-items: center;
         font-family: Arial, sans-serif;
-        width: 550px;
+        width: 520px;
+        /* margin-top: 20rem; */
         margin: 0 auto;
-        padding: 35px;
+        padding: 30px;
         background-color: #fff;
-        border-radius: 7px;
+        border-radius: 15px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        height: 400px;
+        height: 385px;
+        background-color: #FFACA5;
+
     }
     
     .add-container .header {
@@ -30,11 +35,14 @@
     
     .add-container h1 {
         margin: 0;
+        font-size: 30px;
+        font-family: 'Kanit', sans-serif;
     }
     
     .add-container .button-container {
         text-align: center;
-        margin-top: 20px; /* ระยะห่างด้านบนระหว่างปุ่มกับฟอร์ม */
+        margin-top: 25px; /* ระยะห่างด้านบนระหว่างปุ่มกับฟอร์ม */
+
     }
     
 
@@ -43,16 +51,17 @@
         margin: 30px 0;
         flex-direction: row;
         gap: 10px;
+        font-family: 'Kanit', sans-serif;
     }
     
    /* ปรับขนาดและสไตล์ของ .Notes */
 .Notes {
-    margin: 40px 0;
+    margin: 35px 0;
     display: flex;
     flex-direction: row;
     gap: 3px;
     border-radius: 5px;
-    height: 130px; /* ปรับค่า height ของกล่องข้อความ Notes */
+    height: 140px; /* ปรับค่า height ของกล่องข้อความ Notes */
     font-size: 16px; /* ปรับขนาดข้อความตามที่คุณต้องการ */
     line-height: 1.5; /* เพิ่มระยะห่างระหว่างบรรทัด */
     overflow-y: auto; /* เพิ่มการเลื่อนลงเมื่อเนื้อหาเกินความสูงของกล่อง */
@@ -64,15 +73,89 @@ select#Notes {
     padding: 5px; /* ปรับขนาดของการเข้ารหัสตามที่คุณต้องการ */
     border: none; /* ไม่แสดงเส้นขอบ */
     outline: none; /* ไม่มีเส้นขอบเมื่อคลิก */
+    width: 50px;
 }
 
 textarea {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 2px solid #004AAD;
+    height: 110px;
+    width: 250px; 
+    resize: none;
+    padding: 1em;
+    background-color: #B0B6FB;
+    border-radius: 15px ;
 }
+
 textarea {
 	resize: none;
 	padding: 1em;
+    
+}
+
+.description{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.input-item{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Kanit', sans-serif;
+}
+
+.input-item select{
+ height: 30px;
+}
+
+
+.input-item label{
+    margin: 0;
+    width: 50px;
+}
+
+.ab {
+    background-color: #CFD3FF;
+    border: 2px solid #004AAD;
+    border-radius: 12px ;
+}
+
+#emoji {
+    background-color: #CFD3FF;
+    border: 2px solid #004AAD;
+    border-radius: 15px ;
+}
+
+#date {
+    background-color: #CFD3FF;
+    border: 2px solid #004AAD;
+    border-radius: 8px ;
+}
+
+#cd {
+    color: #5752AD;
+}
+
+#ca {
+    color: #5752AD;
+}
+
+#cb {
+    color: #EB504F;
+}
+
+#ce {
+    color:#EB504F ;
+}
+
+#aa {
+    color: #004AAD;
+}
+
+#bb {
+    color: #004AAD;
 }
