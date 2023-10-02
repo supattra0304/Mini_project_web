@@ -3,7 +3,6 @@ const { Daily } = require("../models/daily");
 
 const addDaily = async (req, res) => {
   let { date, note, mood } = req.body;
-
   if (date === undefined || date.trim().length === 0 || mood === undefined) {
     return res
       .status(400)
@@ -13,7 +12,7 @@ const addDaily = async (req, res) => {
   // แปลงรูปแบบวันที่ใหม่
   const datesave = moment(date, "YYYY-MM-DD").toDate();
 
-  if (note === undefined || note.trim.length === 0) {
+  if (note === undefined || note.trim().length === 0) {
     note = "....................";
   }
 

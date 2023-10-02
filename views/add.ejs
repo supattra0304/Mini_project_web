@@ -8,7 +8,7 @@
                 <div class="header">
                     <h1><span id="cb">Enter </span> <span id="cd">Date </span> <span id="ce">and </span> <span id="ca">Notes</span></h1>
                 </div>
-                <form id="dateForm">
+                <form id="dateForm" method="POST">
                     <div class="date-box">
                         <label for="date"><span id="aa">Date:</span></label>
                         <input type="date" id="date" name="date"><br><br>
@@ -18,13 +18,13 @@
                     <div class = input-item>
                         <label for="Notes"><span id="bb">Notes:</span></label>
                         <div class="description">
-                            <textarea name="description" placeholder="Description"></textarea>
-                            <select id="emoji" name="Notes">
-                                <option value="😆">😆</option>
-                                <option value="😀">😀</option>
-                                <option value="🙂">🙂</option>
-                                <option value="😐">😐</option>
-                                <option value="🫤">🫤</option>
+                            <textarea name="description" id = "note" placeholder="Description"></textarea>
+                            <select id="emoji" name="">
+                                <option value="5">😆</option>
+                                <option value="4">😀</option>
+                                <option value="3">🙂</option>
+                                <option value="2">😐</option>
+                                <option value="1">🫤</option>
                             </select>
                         </div>
                     </div>
@@ -43,26 +43,7 @@
         <%- include('includes/footer.ejs')%>
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/13.1.0/twemoji.min.js"></script>
-            <script>
-                function sendData() {
-                    const dateInput = document.getElementById("date").value;
-                    const emojiSelect = document.getElementById("emoji");
-                    const selectedEmoji = emojiSelect.value;
-
-                    // ตรวจสอบค่าที่ได้
-                    console.log("Date: " + dateInput);
-                    console.log("Selected Emoji: " + selectedEmoji);
-
-                    // เคลียร์ค่า
-                    document.getElementById("date").value = "";
-                    emojiSelect.selectedIndex = 0;
-
-                    const resultDiv = document.getElementById("result");
-                    resultDiv.style.display = "block"; // แสดงผลลัพธ์
-                }
-
-
-            </script>
+            <script src="../script/add.js"></script>
             </body>
 
             </html>
