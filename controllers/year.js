@@ -94,7 +94,6 @@ const getYear = async (req, res) => {
 
 const postYear = async (req, res) => {
   const data = req.body;
-  console.log(data);
   if (year === data.year) return;
 
   year = parseInt(data.year);
