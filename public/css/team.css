@@ -1,26 +1,94 @@
-/* กำหนดสไตล์ของคลาส big ให้กล่องห่อ div 4 กล่อง */
-.big {
-    display: flex; /* เปิดใช้งาน Flexbox */
- /* จัดเรียงแนวตั้ง */
-    justify-content: center; /* จัดให้กล่องตรงกลางแนวตั้ง */
-    align-items: center; /* จัดให้กล่องตรงกลางแนวนอน */
-    flex-direction: row;
-  }
-  
-  /* สไตล์ของกล่องภายใน big */
-  .big div {
-    width: 100px; /* กำหนดความกว้างของแต่ละกล่อง */
-    height: 100px; /* กำหนดความสูงของแต่ละกล่อง */
-    background-color: #007bff; /* สีพื้นหลังเริ่มต้น */
-    transition: background-color 0.3s; /* เพิ่มการเปลี่ยนสีอย่างนุ่มนวล */
-  }
-  
-  /* เมื่อโฮเวอร์กับกล่อง */
-  .big div:hover {
-    background-color: #ff5733; /* เปลี่ยนสีเมื่อโฮเวอร์ */}
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-.ff {
+.big {
+    display: flex; 
+    justify-content: center; 
+    gap: 40px; 
+    margin-top: 3rem;
+    box-sizing: border-box; 
+    
+  }
+  
+  .bbox  {
+    width: 200px;
+    height: 240px; 
+    background-color: antiquewhite; 
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+
+    transition: background-color 0.3s; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 10px;;
+  }
+  
+  .big .pict {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 4.9rem;
+    border: 3.5px solid #5752AD; /* เส้นขอบ */
+    box-sizing: border-box; /* ไม่ให้เส้นขอบเพิ่มขนาดของ .pict */
+  }
+  
+  .ftextt {
+    font-family: 'Kanit', sans-serif;
+    position: absolute;
+    text-align: center; 
+    margin-top: 120px; 
+    color: #000; 
+    border: 200;
+  }
+  
+ h1 {
+    font-family: 'Kanit', sans-serif;
+    /* border: 900; */
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    font-size: 2.1rem;
+    color: #5752AD;
+    font-size: 2.7rem;
+ }
+ .us-text {
+     color: #f0454b; /* สีข้อความ "Us" */
+     padding-left: 10px;
+ }
+
+ h3 {
+    color: #4a495a;
+    font-size: 17px;
+    line-height: 1.8rem;
+    margin-top: 2rem;
+ }
+
+div .bbox #aoi {
+    background: url(../assets/Aoi.jpg); 
+    background-size: cover;
+ }
+ div #kung {
+    background: url(../assets/Kung.jpg); 
+    background-size: cover;
+ }
+ div #bew {
+    background: url(../assets/Bew.png); 
+    background-size: cover;
+ }
+ div #beem {
+    background: url(../assets/Beem.png); 
+    background-size: cover;
+    background-position: center;
+ }
+
+ .bbox:hover {
+    background-color: #ffc1c3;
+ }
+ .tt {
+    margin-top: -2rem;
+   
+ }
