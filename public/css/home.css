@@ -14,6 +14,8 @@ body {
    align-items: center;
    min-height: 100vh;
    background-color: #ffbd59;
+   margin-top: -5rem;
+  
 }
 
 .main_page {
@@ -503,7 +505,7 @@ a {
 .page_nav {
    position: absolute;
    text-align: center;
-   bottom: -80px;
+   bottom: -1px;
    left: 50%;
    width: 100%;
    transform: translateX(-50%);
