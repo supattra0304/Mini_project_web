@@ -13,8 +13,8 @@ const { getYear, postYear } = require("../controllers/year");
 const {addDaily} = require("../controllers/add")
 
 
-router.get("/", (req, res) => {
-  res.render("includes/header",{title: "Home"});
+router.get("/home", (req, res) => {
+  res.render("home",{title: "Home"});
 });
 
 router.get("/add", (req, res) => {
