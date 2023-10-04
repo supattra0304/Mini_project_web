@@ -1,0 +1,142 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="../css/home.css" />
+</head>
+<body>
+      <%- include('includes/nav.ejs')%>
+      <div class="Home">
+         <div class="page_container">
+         <!-- เริ่มต้น: ตำแหน่งหน้า 1 -->
+            <div class="page" id="page_1">
+               <div class="main_page">
+                  <div class="main_all">
+                     <div class="main_group">
+                        <a href="#" class="main_group">
+                           <img  class="img_m" src="../assets/Ellipse_m.png" alt="">
+                        </a>
+                        <a href="#" class="main_group">
+                           <img  class="img_main" src="../assets/mmain.png" alt="">
+                        </a>
+                        <div class="main_container">
+                           <p class="text">
+                              <span class="text_m">วันนี้คุณรู้สึก<br />อย่างไรบ้าง ?</span>
+                              <span class="text_main">ถ้าคุณอยากรู้ว่าใน<br />ทุก ๆ วันรู้สึกอย่างไร</span>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         <!-- สิ้นสุด: ตำแหน่งหน้า 1 -->
+
+         <!-- เริ่มต้น: ตำแหน่งหน้า 2 -->
+            <div class="page" id="page_2">
+               <div class="veryhappy_page">
+                  <div class="veryhappy_all">
+                     <div class="veryhappy_group">
+                        <a href="#" class="veryhappy_group">
+                           <img  class="img_vh" src="../assets/Ellipse_vh.png" alt="">
+                        </a>
+                        <a href="#" class="veryhappy_group">
+                           <img  class="img_veryhappy" src="../assets/vveryhappy.png" alt="">
+                        </a>
+                        <div class="text_vh">VERY<br />HAPPY</div>
+                        <div class="text_veryhappy">ความรู้สึกมีความสุขมาก</div>
+                     </div>
+                     </div>
+               </div>
+            </div>
+         <!-- สิ้นสุด: ตำแหน่งหน้า 2 -->
+
+         <!-- ตำแหน่งหน้า 3 -->
+            <div class="page" id="page_3">
+               <div class="happy_page">
+                  <div class="happy_all">
+                     <a href="#" class="happy_group">
+                        <img  class="img_h" src="../assets/Ellipse_h.png" alt="">
+                     </a>
+                     <a href="#" class="happy_group">
+                        <img  class="img_happy" src="../assets/hhappy.png" alt="">
+                     </a>
+                        <div class="text_h">HAPPY</div>
+                        <div class="text_happy">ความรู้สึกมีความสุข</div>
+                  </div>
+               </div>
+            </div>
+         <!-- สิ้นสุด: ตำแหน่งหน้า 3 -->
+
+         <!-- ตำแหน่งหน้า 4 -->
+            <div class="page" id="page_4">
+               <div class="indifferent_page">
+                  <div class="indifferent_all">
+                     <div class="indifferent_group">
+                        <a href="#" class="indifferent_group">
+                           <img  class="img_i" src="../assets/Ellipse_i.png" alt="">
+                        </a>
+                        <a href="#" class="indifferent_group">
+                           <img  class="img_indifferent" src="../assets/iindifferent.png" alt="">
+                        </a>
+                        <div class="text_i">INDIFFERENT</div>
+                        <div class="text_indifferent">ความรู้สึกเมินเฉย ไม่สนใจ</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         <!-- สิ้นสุด: ตำแหน่งหน้า 4 -->
+
+         <!-- ตำแหน่งหน้า 5 -->
+            <div class="page" id="page_5">
+               <div class="angry_page">
+                  <div class="angry_all">
+                     <div class="angry_group">
+                        <a href="#" class="angry_group">
+                           <img  class="img_a" src="../assets/Ellipse_a.png" alt="">
+                        </a>
+                        <a href="#" class="indifferent_group">
+                           <img  class="img_angry" src="../assets/aangry.png" alt="">
+                        </a>
+                        <div class="text_a">ANGRY</div>
+                        <div class="text_angry">ความรู้สึกโกรธเคือง โมโห</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         <!-- สิ้นสุด: ตำแหน่งหน้า 5 -->
+
+         <!-- ตำแหน่งหน้า 6 -->
+            <div class="page" id="page_6">
+               <div class="sad_page">
+                  <div class="sad_all">
+                     <div class="sad_group">
+                        <a href="#" class="sad_group">
+                           <img  class="img_s" src="../assets/Ellipse_s.png" alt="">
+                        </a>
+                        <a href="#" class="indifferent_group">
+                           <img  class="img_sad" src="../assets/ssad.png" alt="">
+                        </a>
+                        <div class="text_s">SAD</div>
+                        <div class="text_sad">ความรู้สึกเศร้า เสียใจ</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         <!-- สิ้นสุด: ตำแหน่งหน้า 6 -->
+
+         </div>
+         <div class="page_nav">
+               <button class="page_button" data-page-index="0">.</button>
+               <button class="page_button" data-page-index="1">.</button>
+               <button class="page_button" data-page-index="2">.</button>
+               <button class="page_button" data-page-index="3">.</button>
+               <button class="page_button" data-page-index="4">.</button>
+               <button class="page_button" data-page-index="5">.</button>
+            </div>
+            <div class="next_page">
+            <ul class="n_page">
+               <li> <a href="/add">บันทึกความรู้สึกของคุณได้ที่นี้</d> </li>
+            </ul>
+            </div>
+      </div>
+         <%- include('includes/footer.ejs') %>
+            <script src="../script/home.js"></script>
+</body>
+</html>
