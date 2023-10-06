@@ -14,7 +14,7 @@ const {addDaily} = require("../controllers/add")
 
 
 router.get("/", (req, res) => {
-  res.render("includes/header",{title: "Home"});
+  res.render("add",{title: "Home"});
 });
 
 router.get("/add", (req, res) => {

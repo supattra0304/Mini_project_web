@@ -28,6 +28,7 @@ function sendData() {
     })
       .then((response) => {
         if (response.ok) {
+          // alert("Save success")
             window.history.pushState({}, '', '/month');
             location.href = location.href;
         } else {

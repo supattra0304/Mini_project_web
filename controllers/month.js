@@ -39,6 +39,8 @@ const imgSrc = [
 ];
 
 const getMonth = async (req, res) => {
+  let redirect = true;
+  let fetchNew = true;
   if (month === null) {
     const currentDate = new Date();
     const day = currentDate.getDate();
@@ -50,49 +52,49 @@ const getMonth = async (req, res) => {
   const endDate = new Date(year, month, 0);
 
   if (redirect === true || fetchNew === true) {
-    const allData = await Daily.find({
-      date: {
-        $gte: startDate,
-        $lte: endDate,
-      },
-    });
+  const allData = await Daily.find({
+    date: {
+      $gte: startDate,
+      $lte: endDate,
+    },
+  });
 
-    allData.sort((a, b) => {
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
-      return dateA - dateB;
-    });
+  await allData.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateA - dateB;
+  });
 
-    if (dataSend.length === 0) {
-      for (let i = 1; i <= daysInCurrentMonth; i++) {
-        let dataFound = false;
-        allData.forEach((item) => {
-          const dateObject = new Date(item.date);
-          const getdate = dateObject.getDate();
+  if (dataSend.length === 0) {
+    for (let i = 1; i <= daysInCurrentMonth; i++) {
+      let dataFound = false;
+      await allData.forEach((item) => {
+        const dateObject = new Date(item.date);
+        const getdate = dateObject.getDate();
 
-          if (i === getdate) {
-            const imgObj = imgSrc.find((obj) => obj.num === item.mood);
-            const colorObj = colorsMood.find((obj) => obj.num === item.mood);
+        if (i === getdate) {
+          const imgObj = imgSrc.find((obj) => obj.num === item.mood);
+          const colorObj = colorsMood.find((obj) => obj.num === item.mood);
 
-            dataSend.push({
-              date: getdate,
-              img: imgObj.src,
-              color: colorObj.color,
-              note: item.note,
-            });
-            dataFound = true;
-          }
-        });
-        if (!dataFound) {
           dataSend.push({
-            date: i,
-            img: null,
-            color: null,
-            note: `Do you forget write ? Let'go to Create one!!!`,
+            date: getdate,
+            img: imgObj.src,
+            color: colorObj.color,
+            note: item.note,
           });
+          dataFound = true;
         }
+      });
+      if (!dataFound) {
+        dataSend.push({
+          date: i,
+          img: null,
+          color: null,
+          note: `Do you forget write ? Let'go to Create one!!!`,
+        });
       }
     }
+  }
   }
   fetchNew = false;
   redirect = false;
@@ -108,8 +110,9 @@ const getMonth = async (req, res) => {
 
 const postMonth = async (req, res) => {
   const data = req.body; //
-  if (month === data.month && year === data.year) return;
-  else month = data.month;
+  // if (month === data.month && year === data.year) return;
+  // else
+  month = data.month;
   year = data.year;
   dataSend = [];
   year = parseInt(data.year);
@@ -127,7 +130,7 @@ const deleteMonth = async (req, res) => {
   console.log(data);
   if (data.month === undefined || data.year === undefined || data.day === 0)
     return;
-  const days = data.day +1;
+  const days = data.day + 1;
   const months = data.month;
   const years = data.year;
   year = data.year;

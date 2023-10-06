@@ -22,13 +22,19 @@ const addDaily = async (req, res) => {
     mood: mood,
   });
 
-  const saveData = await newData.save()
+  const saveData = await newData.save();
   if (saveData) {
     console.log("Data saved successfully");
-    return res.status(201).json({ status: "Created", message: "Data saved successfully" });
+    // const redirectUrl = "/month?redirect=true&fetchNew=true";
+    res.redirect("/month");
+    // return res
+    //   .status(201)
+    //   .json({ status: "Created", message: "Data saved successfully", newData });
   } else {
     console.log("Failed to save data");
-    return res.status(400).json({ status: "Bad request", message: "Failed to save data" });
+    return res
+      .status(400)
+      .json({ status: "Bad request", message: "Failed to save data" });
   }
 };
 
