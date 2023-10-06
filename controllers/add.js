@@ -1,4 +1,5 @@
 const moment = require("moment");
+const {getMonth,postMonth} = require("./month")
 const { Daily } = require("../models/daily");
 
 const addDaily = async (req, res) => {
@@ -8,30 +9,35 @@ const addDaily = async (req, res) => {
       .status(400)
       .json({ status: "Bad request", message: "Empty input" });
   }
-
   // แปลงรูปแบบวันที่ใหม่
   const datesave = moment(date, "YYYY-MM-DD").toDate();
-
   if (note === undefined || note.trim().length === 0) {
     note = "....................";
   }
+
+  const dateString = "2023-10-31";
+  const dateParts = dateString.split("-");
+  const year = parseInt(dateParts[0]);
+  const month = parseInt(dateParts[1]);
+  
+  const result = { month, year };
 
   const newData = new Daily({
     date: datesave,
     note: note,
     mood: mood,
   });
-
   const saveData = await newData.save();
   if (saveData) {
     console.log("Data saved successfully");
-    // const redirectUrl = "/month?redirect=true&fetchNew=true";
-    res.redirect("/month");
-    // return res
-    //   .status(201)
-    //   .json({ status: "Created", message: "Data saved successfully", newData });
+
+    const fakeReq = {
+      body: result,
+    };
+    
+    await postMonth(fakeReq, res);
+
   } else {
-    console.log("Failed to save data");
     return res
       .status(400)
       .json({ status: "Bad request", message: "Failed to save data" });

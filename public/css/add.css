@@ -1,161 +1,220 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-.add-container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-    font-family: 'Kanit', sans-serif;
-    }
-    
-    .add-container .container {
-        display: flex;
-        flex-direction: column;
-        /* justify-content: center; */
-        align-items: center;
-        font-family: Arial, sans-serif;
-        width: 520px;
-        /* margin-top: 20rem; */
-        margin: 0 auto;
-        padding: 30px;
-        background-color: #fff;
-        border-radius: 15px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        height: 385px;
-        background-color: antiquewhite;
+.add-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  font-family: "Kanit", sans-serif;
+}
 
-    }
-    
-    .add-container .header {
-        text-align: center;
-    }
-    
-    .add-container h1 {
-        margin: 0;
-        font-size: 30px;
-        font-family: 'Kanit', sans-serif;
-    }
-    
-    .add-container .button-container {
-        text-align: center;
-        margin-top: 25px; /* ระยะห่างด้านบนระหว่างปุ่มกับฟอร์ม */
+.add-container #dateForm {
+  width: 100%;
+}
 
-    }
-    
+.add-container .container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  font-family: Arial, sans-serif;
+  width: 520px;
+  /* margin-top: 20rem; */
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  height: 510px;
+  background-color: antiquewhite;
+}
 
-    .date-box
-    {
-        margin: 30px 0;
-        flex-direction: row;
-        gap: 10px;
-        font-family: 'Kanit', sans-serif;
-    }
-    
-   /* ปรับขนาดและสไตล์ของ .Notes */
-.Notes {
-    margin: 35px 0;
-    display: flex;
-    flex-direction: row;
-    gap: 3px;
-    border-radius: 5px;
-    height: 140px; /* ปรับค่า height ของกล่องข้อความ Notes */
-    font-size: 16px; /* ปรับขนาดข้อความตามที่คุณต้องการ */
-    line-height: 1.5; /* เพิ่มระยะห่างระหว่างบรรทัด */
-    overflow-y: auto; /* เพิ่มการเลื่อนลงเมื่อเนื้อหาเกินความสูงของกล่อง */
+.add-container .header {
+  text-align: center;
+}
+
+.add-container h1 {
+  margin: 0;
+  font-size: 30px;
+  font-family: "Kanit", sans-serif;
+}
+
+.add-container .button-container {
+  text-align: center;
+  /* margin-top: 25px; ระยะห่างด้านบนระหว่างปุ่มกับฟอร์ม */
+  margin: 15px 0;
+}
+
+.add-container .date-box {
+  margin: 10px 40px 10px 90px;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-family: "Kanit", sans-serif;
+}
+
+.add-container .date-box input {
+  flex: 1;
+  width: 150px;
+  height: 30px;
+}
+
+.add-container .date-box label,
+.add-container .date-box span {
+  margin: 0;
+}
+
+/* ปรับขนาดและสไตล์ของ .Notes */
+.add-container .Notes {
+  margin: 35px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  border-radius: 5px;
+  height: 140px; /* ปรับค่า height ของกล่องข้อความ Notes */
+  font-size: 16px; /* ปรับขนาดข้อความตามที่คุณต้องการ */
+  line-height: 1.5; /* เพิ่มระยะห่างระหว่างบรรทัด */
+  overflow-y: auto; /* เพิ่มการเลื่อนลงเมื่อเนื้อหาเกินความสูงของกล่อง */
 }
 
 /* ปรับขนาดและสไตล์ของ select#Notes */
-select#Notes {
-    font-size: 16px; /* ปรับขนาดข้อความตามที่คุณต้องการ */
-    padding: 5px; /* ปรับขนาดของการเข้ารหัสตามที่คุณต้องการ */
-    border: none; /* ไม่แสดงเส้นขอบ */
-    outline: none; /* ไม่มีเส้นขอบเมื่อคลิก */
-    width: 50px;
+.add-container select#Notes {
+  font-size: 16px; /* ปรับขนาดข้อความตามที่คุณต้องการ */
+  padding: 5px; /* ปรับขนาดของการเข้ารหัสตามที่คุณต้องการ */
+  border: none; /* ไม่แสดงเส้นขอบ */
+  outline: none; /* ไม่มีเส้นขอบเมื่อคลิก */
+  width: 50px;
 }
 
-textarea {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    border: 2px solid #004AAD;
-    height: 110px;
-    width: 250px; 
-    resize: none;
-    padding: 1em;
-    background-color: #B0B6FB;
-    border-radius: 15px ;
+.add-container textarea {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid #004aad;
+  height: 110px;
+  width: 250px;
+  resize: none;
+  padding: 1em;
+  background-color: #b0b6fb;
+  border-radius: 15px;
 }
 
-textarea {
-	resize: none;
-	padding: 1em;
-    
+.add-container textarea {
+  resize: none;
+  padding: 1em;
+  width: 80%;
+  height: 200px;
+
 }
 
-.description{
-    width: 100%;
+.add-container .description {
+  /* border: 1px solid red; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-container .input-item {
+  display: flex;
+  flex-direction: column;
+  font-family: "Kanit", sans-serif;
+}
+
+.add-container .input-item select {
+  height: 30px;
+}
+
+.add-container .input-item label {
+  margin: 10px 40px 10px 90px;
+  width: 50px;
+}
+
+.add-container .ab {
+  background-color: #cfd3ff;
+  border: 2px solid #004aad;
+  border-radius: 30px;
+  width: 70px;
+  height: 35px;
+}
+
+.add-container #emoji {
+  background-color: #cfd3ff;
+  border: 2px solid #004aad;
+  border-radius: 15px;
+}
+
+.add-container #date {
+  background-color: #cfd3ff;
+  border: 2px solid #004aad;
+  border-radius: 8px;
+}
+
+.add-container #cd {
+  color: #5752ad;
+}
+
+.add-container #ca {
+  color: #5752ad;
+}
+
+.add-container #cb {
+  color: #eb504f;
+}
+
+.add-container #ce {
+  color: #eb504f;
+}
+
+.add-container #aa {
+  color: #004aad;
+}
+
+.add-container #bb {
+  color: #004aad;
+}
+
+.add-container .select_mood{
+    margin: 20px 0 0 0;
     display: flex;
-    align-items: center;
-    
+    gap: 10px   ;
 }
 
-.input-item{
-    display: flex;
-    flex-direction: column;
-    font-family: 'Kanit', sans-serif;
-}
-
-.input-item select{
- height: 30px;
-}
-
-
-.input-item label{
-    margin: 0;
+.add-container .mood{
     width: 50px;
+    height: 50px;
 }
 
-.ab {
-    background-color: #CFD3FF;
-    border: 2px solid #004AAD;
-    border-radius: 12px ;
+.add-container .mood_active{
+    width: 55px !important;
+    height: 55px !important;
 }
 
-#emoji {
-    background-color: #CFD3FF;
-    border: 2px solid #004AAD;
-    border-radius: 15px ;
+.add-container .mood_active:first-child{
+    border-radius: 100%;
+    box-shadow: 0px 0px 20px 5px rgba(60, 255, 50, 0.5), inset 0px 0px 10px 5px rgba(60, 255, 50, 0.5); 
 }
 
-#date {
-    background-color: #CFD3FF;
-    border: 2px solid #004AAD;
-    border-radius: 8px ;
+.add-container .mood_active:nth-child(2){
+    border-radius: 100%;
+    box-shadow: 0px 0px 20px 5px rgba(255, 248, 51, 0.674), inset 0px 0px 10px 5px rgba(255, 248, 51, 0.674); 
 }
 
-#cd {
-    color: #5752AD;
+.add-container .mood_active:nth-child(3){
+    border-radius: 100%;
+    box-shadow: 0px 0px 20px 5px rgba(93, 182, 250, 0.674), inset 0px 0px 10px 5px  rgba(93, 182, 250, 0.674); 
 }
 
-#ca {
-    color: #5752AD;
+.add-container .mood_active:nth-child(4){
+    border-radius: 100%;
+    box-shadow: 0px 0px 20px 5px rgba(250, 93, 93, 0.674), inset 0px 0px 10px 5px  rgba(250, 93, 93, 0.674); 
 }
 
-#cb {
-    color: #EB504F;
+.add-container .mood_active:nth-child(5){
+    border-radius: 100%;
+    box-shadow: 0px 0px 20px 5px rgba(153, 83, 219, 0.674), inset 0px 0px 10px 5px  rgba(153, 83, 219, 0.674); 
 }
 
-#ce {
-    color:#EB504F ;
-}
-
-#aa {
-    color: #004AAD;
-}
-
-#bb {
-    color: #004AAD;
-}

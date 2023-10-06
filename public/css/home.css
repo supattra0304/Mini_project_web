@@ -1,30 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 body {
-   margin: 0; /* ลบ margin ของ body เพื่อให้พื้นหลังสีเต็มหน้าจอ */
-   background-color: #ffbd59; /* กำหนดสีพื้นหลังสำหรับ body */
-   font-family: "Kanit", sans-serif;
+  margin: 0; /* ลบ margin ของ body เพื่อให้พื้นหลังสีเต็มหน้าจอ */
+  background-color: #ffbd59; /* กำหนดสีพื้นหลังสำหรับ body */
+  font-family: "Kanit", sans-serif;
 }
 
 .Home {
-   display: flex;
-   flex-direction: column;
-   width: 100%;
-   align-items: center;
-   min-height: 100vh;
-   background-color: #ffbd59;
-   margin-top: -5rem;
+  display: flex;
+  flex-direction: column;
   
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 100vh; */
+  background-color: #ffbd59;
+  margin-top: 3rem;
 }
 
 .main_page {
   overflow: hidden;
   background: linear-gradient(
-   135deg,
-   rgb(61, 61, 214) 0%,
-   rgb(118.17, 118.17, 232.48) 69.1%,
-   rgb(255, 212, 113) 100%);
+    135deg,
+    rgb(61, 61, 214) 0%,
+    rgb(118.17, 118.17, 232.48) 69.1%,
+    rgb(255, 212, 113) 100%
+  );
   width: 1000px;
   height: 500px;
   border-radius: 80px;
@@ -111,7 +113,8 @@ body {
     135deg,
     rgb(5, 244, 131) 0%,
     rgb(65.81, 221.2, 202.55) 68.75%,
-    rgb(186.23, 186.23, 247.76) 100%);
+    rgb(186.23, 186.23, 247.76) 100%
+  );
   width: 1000px;
   height: 500px;
   border-radius: 80px;
@@ -142,33 +145,32 @@ body {
   object-fit: cover;
 }
 
-
 .text_vh {
-   position: absolute;
-   top: 140px;
-   left: 81px;
-   font-weight: 700;
-   color: #ffffff;
-   font-size: 100px;
-   line-height: 100px;
-   white-space: nowrap;
-   letter-spacing: 1px;
+  position: absolute;
+  top: 140px;
+  left: 81px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 100px;
+  line-height: 100px;
+  white-space: nowrap;
+  letter-spacing: 1px;
 }
 
 .text_veryhappy {
-   position: absolute;
-   width: 335px;
-   height: 135px;
-   top: 280px;
-   left: 81px;
-   font-weight: 700;
-   color: #ffffff;
-   font-size: 30px;
-   letter-spacing: 0;
-   line-height: 187px;
-   white-space: nowrap;
-   letter-spacing: 0;
- }
+  position: absolute;
+  width: 335px;
+  height: 135px;
+  top: 280px;
+  left: 81px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: 187px;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
 
 .happy_page {
   display: flex;
@@ -183,7 +185,8 @@ body {
     135deg,
     rgb(255, 212, 113) 0%,
     rgb(255, 212, 113) 68.75%,
-    rgb(186.23, 186.23, 247.76) 100%);
+    rgb(186.23, 186.23, 247.76) 100%
+  );
   width: 1000px;
   height: 500px;
   border-radius: 80px;
@@ -204,348 +207,353 @@ body {
   z-index: 1;
 }
 .img_happy {
-   position: absolute;
-   width: 500px;
-   height: 500px;
-   left: auto; /* เปลี่ยน left เป็น auto เพื่อให้มีตำแหน่งตามปกติ */
-   right: -100px;
-   z-index: 1;
-   object-fit: cover;
- }
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: auto; /* เปลี่ยน left เป็น auto เพื่อให้มีตำแหน่งตามปกติ */
+  right: -100px;
+  z-index: 1;
+  object-fit: cover;
+}
 
- .text_h {
-   position: absolute;
-   top: 400px;
-   left: auto; /* ตั้งค่า left เพื่อให้ข้อความไปทางซ้าย */
-   right: 880px;
-   font-weight: 700;
-   color: #ffffff;
-   font-size: 100px;
-   line-height: 100px;
-   white-space: nowrap;
-   letter-spacing: 1px;
+.text_h {
+  position: absolute;
+  top: 400px;
+  left: auto; /* ตั้งค่า left เพื่อให้ข้อความไปทางซ้าย */
+  right: 880px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 100px;
+  line-height: 100px;
+  white-space: nowrap;
+  letter-spacing: 1px;
 }
 
 .text_happy {
-   position: absolute;
-   width: 335px;
-   height: 135px;
-   top: 450px;
-   left: auto;
-   right: 860px;
-   font-weight: 700;
-   color: #ffffff;
-   font-size: 30px;
-   letter-spacing: 0;
-   line-height: 187px;
-   white-space: nowrap;
+  position: absolute;
+  width: 335px;
+  height: 135px;
+  top: 450px;
+  left: auto;
+  right: 860px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: 187px;
+  white-space: nowrap;
 }
 
-
-
 .indifferent_page {
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   width: 100%;
-   border-radius: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  border-radius: 80px;
 }
 
 .indifferent_all {
-   background: linear-gradient(
-   135deg,
-   rgb(120.49, 206.58, 255) 0%,
-   rgb(72.5, 230.76, 221.27) 68.75%,
-   rgb(199.11, 199.11, 255) 100%);
-   width: 1000px;
-   height: 500px;
-   border-radius: 80px;
-   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* เพิ่มเงารอบๆ .main_page */
+  background: linear-gradient(
+    135deg,
+    rgb(120.49, 206.58, 255) 0%,
+    rgb(72.5, 230.76, 221.27) 68.75%,
+    rgb(199.11, 199.11, 255) 100%
+  );
+  width: 1000px;
+  height: 500px;
+  border-radius: 80px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* เพิ่มเงารอบๆ .main_page */
 }
 
 .indifferent_group {
-   position: relative;
-   height: 500px;
-
+  position: relative;
+  height: 500px;
 }
 
 .img_i {
-   position: absolute;
-   width: 895px;
-   height: 500px;
-   top: 0;
-   left: 0;
-   border-radius: 80px;
+  position: absolute;
+  width: 895px;
+  height: 500px;
+  top: 0;
+  left: 0;
+  border-radius: 80px;
 }
 
 .img_indifferent {
-   position: absolute;
-   width: 450px;
-   height: 450px;
-   top: 30px;
-   left: 550px;
-   object-fit: cover;
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  top: 30px;
+  left: 550px;
+  object-fit: cover;
 }
 
 .text_i {
-   position: absolute;
-   top: 134px;
-   left: 26px;
-   font-weight: 700;
-   color: #ffffff;
-   font-size: 90px;
-   letter-spacing: 1px;
-   line-height: 150px;
-   white-space: nowrap;
+  position: absolute;
+  top: 134px;
+  left: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 90px;
+  letter-spacing: 1px;
+  line-height: 150px;
+  white-space: nowrap;
 }
 
 .text_indifferent {
-   position: absolute;
-   width: 422px;
-   height: 135px;
-   top: 200px;
-   left: 26px;
-   font-weight: 700;
-   color: #ffffff;
-   font-size: 30px;
-   letter-spacing: 0;
-   line-height: 150px;
-   white-space: nowrap;
+  position: absolute;
+  width: 422px;
+  height: 135px;
+  top: 200px;
+  left: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: 150px;
+  white-space: nowrap;
 }
 
 .angry_page {
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   width: 100%;
-   border-radius: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  border-radius: 80px;
 }
 
 .angry_all {
-   background: linear-gradient(135deg,
-   rgb(244, 5, 5) 0%,
-   rgb(221.2, 103.1, 65.81) 68.02%,
-   rgb(255, 212, 113) 100%);
-   width: 1000px;
-   height: 500px;
-   border-radius: 80px;
+  background: linear-gradient(
+    135deg,
+    rgb(244, 5, 5) 0%,
+    rgb(221.2, 103.1, 65.81) 68.02%,
+    rgb(255, 212, 113) 100%
+  );
+  width: 1000px;
+  height: 500px;
+  border-radius: 80px;
 }
 
 .angry_group {
-   position: relative;
-   width: 963px;
-   height: 500px;
+  position: relative;
+  width: 963px;
+  height: 500px;
 }
 
 .img_a {
-   position: absolute;
-   width: 895px;
-   height: 500px;
-   border-radius: 80px;
-   top: 0;
-   left: 0;
+  position: absolute;
+  width: 895px;
+  height: 500px;
+  border-radius: 80px;
+  top: 0;
+  left: 0;
 }
 
 .img_angry {
-   position: absolute;
-   width: 500px;
-   height: 457px;
-   top: 22px;
-   left: 463px;
-   object-fit: cover;
+  position: absolute;
+  width: 500px;
+  height: 457px;
+  top: 22px;
+  left: 463px;
+  object-fit: cover;
 }
 
 .text_a {
-   position: absolute;
-   width: 336px;
-   top: 149px;
-   left: 85px;
-   font-weight: 700;
-   color: #ffffff;
-   font-size: 100px;
-   letter-spacing: 1px;
-   line-height: 150px;
+  position: absolute;
+  width: 336px;
+  top: 149px;
+  left: 85px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 100px;
+  letter-spacing: 1px;
+  line-height: 150px;
 }
 
 .text_angry {
-   position: absolute;
-   width: 422px;
-   height: 135px;
-   top: 220px;
-   left: 85px;
-   font-weight: 700;
-   color: #ffffff;
-   font-size: 30px;
-   letter-spacing: 0;
-   line-height: 150px;
-   white-space: nowrap;
+  position: absolute;
+  width: 422px;
+  height: 135px;
+  top: 220px;
+  left: 85px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: 150px;
+  white-space: nowrap;
 }
 
 .sad_page {
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
 .sad_all {
-   background: linear-gradient(
-   135deg,
-   rgb(113.35, 70.23, 236.07) 0%,
-   rgb(158.74, 158.74, 255) 71.67%,
-   rgb(72.5, 230.76, 221.27) 100%);
-   width: 1000px;
-   height: 500px;
-   border-radius: 80px;
+  background: linear-gradient(
+    135deg,
+    rgb(113.35, 70.23, 236.07) 0%,
+    rgb(158.74, 158.74, 255) 71.67%,
+    rgb(72.5, 230.76, 221.27) 100%
+  );
+  width: 1000px;
+  height: 500px;
+  border-radius: 80px;
 }
 
 .sad_group {
-   position: relative;
-   width: 979px;
-   height: 500px;
+  position: relative;
+  width: 979px;
+  height: 500px;
 }
 
 .img_s {
-   position: absolute;
-   width: 895px;
-   height: 500px;
-   border-radius: 80px;
-   top: 0;
-   left: 0;
+  position: absolute;
+  width: 895px;
+  height: 500px;
+  border-radius: 80px;
+  top: 0;
+  left: 0;
 }
 
 .img_sad {
-   position: absolute;
-   width: 500px;
-   height: 500px;
-   top: 0;
-   left: 479px;
-   object-fit: cover;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 0;
+  left: 479px;
+  object-fit: cover;
 }
 
 .text_s {
-   position: absolute;
-   top: 140px;
-   left: 123px;
-   font-weight: 700;
-   color: #ffffff;
-   font-size: 100px;
-   letter-spacing: 1px;
-   line-height: 187px;
-   white-space: nowrap;
+  position: absolute;
+  top: 140px;
+  left: 123px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 100px;
+  letter-spacing: 1px;
+  line-height: 187px;
+  white-space: nowrap;
 }
 
 .text_sad {
-   position: absolute;
-   width: 356px;
-   height: 135px;
-   top: 220px;
-   left: 123px;
-   font-weight: 700;
-   color: #ffffff;
-   font-size: 30px;
-   letter-spacing: 0;
-   line-height: 187px;
-   white-space: nowrap;
+  position: absolute;
+  width: 356px;
+  height: 135px;
+  top: 220px;
+  left: 123px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: 187px;
+  white-space: nowrap;
 }
 
 /*ส่วนการเลื่อนหน้า*/
 .page {
-   display: none;
-   width: 100%;
-   height: 100vh;
-   justify-content: center;
-   align-items: center;
-   font-size: 2em;
-   transition: opacity 0.3s;
+  display: none;
+  width: 100%;
+  /* height: 100vh; */
+  /* margin-bottom: 30px; */
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  transition: opacity 0.3s;
 }
 
 .page.active {
-   display: flex;
-   opacity: 1;
+  display: flex;
+  opacity: 1;
 }
 
 /*ส่วนnext_page*/
 .next_page {
-   background-color: #789eff;
-display: flex;
-flex-direction: row;
-justify-content: center;
-width: 100%;
-width: 400px;
-height: 50px;
-position: relative;
-border-radius: 80px;
-text-decoration: none;
+  background-color: #789eff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  width: 400px;
+  height: 50px;
+  position: relative;
+  border-radius: 80px;
+  text-decoration: none;
+  margin: 20px 0;
 }
 
 .n_page li {
-   list-style: none;
-   height: 100%;
-   padding: 0.5rem 1rem;
-   font-size: 24px;
-   font-weight: 700;
-   cursor: pointer;
-   display: flex; /* ทำให้เนื้อหาอยู่กึ่งกลางตามแกนตั้งและแนวนอน */
-   align-items: center; /* ยืดเนื้อหาให้อยู่กึ่งกลางตามแกนตั้ง */
-   justify-content: center; /* ยืดเนื้อหาให้อยู่กึ่งกลางตามแกนแนวนอน */
-   position: relative; /* เพิ่ม position: relative; เพื่อให้สามารถใช้ right */
-   right: 22px; /* เลื่อนข้อความไปทางซ้ายโดยระบุค่า right */
+  list-style: none;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex; /* ทำให้เนื้อหาอยู่กึ่งกลางตามแกนตั้งและแนวนอน */
+  align-items: center; /* ยืดเนื้อหาให้อยู่กึ่งกลางตามแกนตั้ง */
+  justify-content: center; /* ยืดเนื้อหาให้อยู่กึ่งกลางตามแกนแนวนอน */
+  position: relative; /* เพิ่ม position: relative; เพื่อให้สามารถใช้ right */
+  right: 22px; /* เลื่อนข้อความไปทางซ้ายโดยระบุค่า right */
 }
 
 a {
-   text-decoration: none; /* ลบเส้นที่ขีดใต้ลิงก์ */
+  text-decoration: none; /* ลบเส้นที่ขีดใต้ลิงก์ */
 }
 
 .n_page li a:hover {
-   color: #ffffff;
+  color: #ffffff;
 }
 
 /*ส่วนปุ่มเลื่อน*/
 .page_nav {
-   position: absolute;
-   text-align: center;
-   bottom: -1px;
-   left: 50%;
-   width: 100%;
-   transform: translateX(-50%);
-   z-index: 1; /* ให้ปุ่ม page_nav อยู่ด้านหน้าของหน้าเว็บ */
+  /* position: absolute; */
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  bottom: -1px;
+  /* left: 50%; */
+  width: 100%;
+  /* transform: translateX(-50%); */
+  z-index: 1; /* ให้ปุ่ม page_nav อยู่ด้านหน้าของหน้าเว็บ */
 }
 
 .page_button {
-   font-size: 10px;
-   margin: 0 20px; /* ระยะห่างระหว่างปุ่ม */
-   padding: 5px 10px;
-   background-color: #ffffff;
-   color: #ffffff;
-   border-radius: 50%;
-   border: none;
-   border: 2px solid transparent;
-   cursor: pointer;
-   transition: all 0.3s ease; /* เพิ่มการเปลี่ยนขนาดอย่างน้อยเพื่อให้เกิด animation */
-   width: 30px; /* กำหนดความกว้างเริ่มต้นของปุ่ม */
-   height: 30px; /* กำหนดความสูงเริ่มต้นของปุ่ม */
-   top: 0; /* ตำแหน่งเริ่มต้นของปุ่ม */
-   transition: background-color 0.3s ease, color 0.3s ease; /* เพิ่มการเปลี่ยนสีของพื้นหลังและข้อความ */
+  font-size: 10px;
+  margin: 0 20px; /* ระยะห่างระหว่างปุ่ม */
+  padding: 5px 10px;
+  background-color: #ffffff;
+  color: #ffffff;
+  border-radius: 50%;
+  border: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease; /* เพิ่มการเปลี่ยนขนาดอย่างน้อยเพื่อให้เกิด animation */
+  width: 30px; /* กำหนดความกว้างเริ่มต้นของปุ่ม */
+  height: 30px; /* กำหนดความสูงเริ่มต้นของปุ่ม */
+  top: 0; /* ตำแหน่งเริ่มต้นของปุ่ม */
+  transition: background-color 0.3s ease, color 0.3s ease; /* เพิ่มการเปลี่ยนสีของพื้นหลังและข้อความ */
 }
 
 .page_button.active {
-   font-size: 20px; /* ปรับขนาดเมื่อปุ่ม active */
-   transform: scale(1.2); /* เพิ่มขนาดเมื่อ active */
-   width: 30px; /* กำหนดความกว้างของปุ่มเมื่อ active */
-   height: 30px; /* กำหนดความสูงของปุ่มเมื่อ active */
-   top: 10px; /* ย้ายปุ่มขึ้นเล็กน้อยเมื่อ active */
-   background-color: #3D3DD6; /* สีพื้นหลังเมื่อ active */
-   color: #3D3DD6; /* สีของข้อความเมื่อ active */
-
+  font-size: 20px; /* ปรับขนาดเมื่อปุ่ม active */
+  transform: scale(1.2); /* เพิ่มขนาดเมื่อ active */
+  width: 30px; /* กำหนดความกว้างของปุ่มเมื่อ active */
+  height: 30px; /* กำหนดความสูงของปุ่มเมื่อ active */
+  top: 10px; /* ย้ายปุ่มขึ้นเล็กน้อยเมื่อ active */
+  background-color: #3d3dd6; /* สีพื้นหลังเมื่อ active */
+  color: #3d3dd6; /* สีของข้อความเมื่อ active */
 }
 
 .page_button:hover {
-   border-width: 5px; /* เพิ่มขนาดขอบของปุ่มเมื่อ hover */
-   transform: scale(1.2); /* เพิ่มขนาดเมื่อ hover */
-   width: 30px; /* กำหนดความกว้างของปุ่มเมื่อ hover */
-   height: 30px; /* กำหนดความสูงของปุ่มเมื่อ hover */
-   top: 10px; /* ย้ายปุ่มขึ้นเล็กน้อยเมื่อ hover */
-   background-color: #3D3DD6; /* สีพื้นหลังเมื่อ hover */
-   color: #3D3DD6; /* สีของข้อความเมื่อ hover */
+  border-width: 5px; /* เพิ่มขนาดขอบของปุ่มเมื่อ hover */
+  transform: scale(1.2); /* เพิ่มขนาดเมื่อ hover */
+  width: 30px; /* กำหนดความกว้างของปุ่มเมื่อ hover */
+  height: 30px; /* กำหนดความสูงของปุ่มเมื่อ hover */
+  top: 10px; /* ย้ายปุ่มขึ้นเล็กน้อยเมื่อ hover */
+  background-color: #3d3dd6; /* สีพื้นหลังเมื่อ hover */
+  color: #3d3dd6; /* สีของข้อความเมื่อ hover */
 }

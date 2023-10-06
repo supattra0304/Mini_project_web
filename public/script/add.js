@@ -2,22 +2,39 @@ const dateInput = document.getElementById("date");
 const emojiSelect = document.getElementById("emoji");
 const noteInput = document.querySelector("#note");
 
+const moods = document.querySelectorAll(".mood");
+let value = null;
+
+moods.forEach((mood, index) => {
+  mood.addEventListener("click", () => {
+    if (value === null || value !== 5 - index) {
+      // ลบคลาส "mood_active" จาก mood ที่มีค่าเก่า
+      moods.forEach((m) => m.classList.remove("mood_active"));
+      // เพิ่มคลาส "mood_active" ให้กับ mood ที่ถูกคลิก
+      mood.classList.add("mood_active");
+      // อัพเดตค่า value เป็น 5 - index
+      value = 5 - index;
+    } else {
+      // ถ้าคลิก mood ที่มีค่าเดิมอีกครั้งให้ลบคลาส "mood_active" ออก
+      mood.classList.remove("mood_active");
+      // อัพเดตค่า value เป็น null เพื่อให้สามารถเลือก mood ใหม่ได้
+      value = null;
+    }
+  });
+});
+
 function sendData() {
   const date = dateInput.value;
-  let mood = emojiSelect.value;
   const note = noteInput.value;
-  mood = parseInt(mood);
 
-  if (date !== undefined && date.length !== 0 && mood !== undefined) {
+  if (date !== undefined && date.length !== 0 && value !== null) {
     dateInput.value = "";
-    emojiSelect.selectedIndex = 0;
     noteInput.value = "";
     const url = "/add";
     const data = {
       date: date,
       note: note,
-      mood: mood,
-   
+      mood: value+1,
     };
     fetch(url, {
       method: "POST",
@@ -28,9 +45,8 @@ function sendData() {
     })
       .then((response) => {
         if (response.ok) {
-          // alert("Save success")
-            window.history.pushState({}, '', '/month');
-            location.href = location.href;
+          window.history.pushState({}, "", "/month");
+          location.href = location.href;
         } else {
           console.error("เกิดข้อผิดพลาดในการร้องขอ:", response.status);
         }
@@ -38,18 +54,7 @@ function sendData() {
       .catch((error) => {
         console.error("เกิดข้อผิดพลาดในการร้องขอ:", error);
       });
-  }else{
-    alert("Please Select Date and mood!!!")
+  } else {
+    alert("Please Select Date and mood!!!");
   }
-
- 
 }
-
-
-
-// // เคลียร์ค่า
-// document.getElementById("date").value = "";
-// emojiSelect.selectedIndex = 0;
-
-// const resultDiv = document.getElementById("result");
-// resultDiv.style.display = "block"; // แสดงผลลัพธ์
